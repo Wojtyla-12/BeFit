@@ -1,0 +1,36 @@
+﻿@model IEnumerable<BeFitt.Models.Statystyki>
+
+@{
+	ViewData["Title"] = "Statystyki treningowe";
+}
+<h2>Statystyki treninigowe</h2>
+<table class="table table-striped table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>Nazwa ćwiczenia</th>
+            <th>Liczba treningów</th>
+            <th>Łącznie powtórzeń</th>
+            <th>Średni ciężar (kg)</th>
+            <th>Rekord ciężaru (kg)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td><strong>@item.NazwaCwiczenia</strong></td>
+                <td>@item.Ile_razy</td>
+                <td>@item.Ile_powtorzen</td>
+                <td>@Math.Round(item.Srednia, 1)</td>
+                <td>@item.Maks</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">
+        Brak danych z ostatnich 28 dni. Idź na trening! :)
+    </div>
+}

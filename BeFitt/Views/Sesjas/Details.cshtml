@@ -1,0 +1,42 @@
+﻿@model BeFitt.Models.Sesja
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Sesja</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Start_Czas)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Start_Czas)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Koniec_Czas)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Koniec_Czas)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Dzien_Start)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Dzien_Start)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Dzien_Koniec)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Dzien_Koniec)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
